@@ -1,0 +1,10 @@
+{% extends  "albums/base.html" %}
+
+{% block content %}
+  
+<h2>{{album.title}} - {{album.artist}} <a href="">(edit)</a></h2>
+<h3>{{album.release_date}}</h3>
+
+<p><a href="{% url 'artist_detail' pk=album.artist.id %}">More by this artist</a></p>
+
+{% endblock content %}

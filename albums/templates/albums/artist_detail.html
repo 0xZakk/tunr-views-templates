@@ -1,0 +1,21 @@
+{% extends  "albums/base.html" %}
+
+{% block content %}
+  
+<h2>{{ artist.name }} <a href="{% url 'artist_edit' pk=artist.id %}">(edit)</a></h2>
+<h3>{{ artist.nationality }}</h3>
+
+<p>{{artist.bio}}</p>
+
+<h3>Album <a href="">(+)</a></h3>
+<ul>
+  {% for album in artist.albums.all %}
+  <li>
+    <a href="">{{ album.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'artist_delete' pk=artist.id %}">Delete</a>
+
+{% endblock content %}
